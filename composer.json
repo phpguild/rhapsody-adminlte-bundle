@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "php": ">=7.1"
+    "php": ">=7.1",
+    "phpguild/rhapsody-bundle": "dev-develop"
   },
   "autoload": {
     "psr-4": {
