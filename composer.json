@@ -1,0 +1,20 @@
+{
+  "name": "phpguild/rhapsody-adminlte-bundle",
+  "description": "AdminLTE 3 template for Symfony 4 and 5.",
+  "type": "bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johnstyle",
+      "homepage": "https://github.com/johnstyle"
+    }
+  ],
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpGuild\\RhapsodyAdminLteBundle\\": "src/"
+    }
+  }
+}
