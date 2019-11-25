@@ -3,6 +3,6 @@ services:
     autowire: true
     autoconfigure: true
 
-  App\:
+  PhpGuild\RhapsodyAdminLteBundle\:
     resource: '../../*'
     exclude: '../../{DependencyInjection,RhapsodyAdminLteBundle.php}'

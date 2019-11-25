@@ -24,16 +24,7 @@
                     </div>
                 </div>
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        {% block sidebar_links %}
-                            <li class="nav-item">
-                                <a href="{{ path('frontend_dashboard') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>{{ 'ui.dashboard'|trans }}</p>
-                                </a>
-                            </li>
-                        {% endblock %}
-                    </ul>
+                    {{ knp_menu_render('sidebar', { template: '@RhapsodyAdminLte/menu/sidebar.html.twig' }) }}
                 </nav>
             </div>
         </aside>
@@ -75,11 +66,11 @@
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('dist/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/rhapsodyadminlte/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/rhapsodyadminlte/css/adminlte.min.css') }}">
 {% endblock %}
 
 {% block javascripts %}
-    <script defer src="{{ asset('dist/js/jquery.min.js') }}"></script>
-    <script defer src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    <script defer src="{{ asset('bundles/rhapsodyadminlte/js/jquery.min.js') }}"></script>
+    <script defer src="{{ asset('bundles/rhapsodyadminlte/js/adminlte.min.js') }}"></script>
 {% endblock %}

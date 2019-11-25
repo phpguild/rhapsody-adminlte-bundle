@@ -1,0 +1,25 @@
+{% extends '@KnpMenu/menu.html.twig' %}
+
+{% block list %}
+    {% set listAttributes = listAttributes|merge_recursive({
+        'class': 'nav nav-pills nav-sidebar flex-column',
+        'data-widget': 'treeview',
+        'role': 'menu',
+        'data-accordion': 'false',
+    }) %}
+    {{ parent() }}
+{% endblock %}
+
+{% block item %}
+    {% set item = item|hydrate_object('attributes', item.attributes|merge_recursive({ class: 'nav-item' })) %}
+    {{ parent() }}
+{% endblock %}
+
+{% block linkElement %}
+    {% import _self as knp_menu %}
+    {% set item = item|hydrate_object('linkAttributes', item.linkAttributes|merge_recursive({ class: 'nav-link' })) %}
+    <a href="{{ item.uri }}"{{ knp_menu.attributes(item.linkAttributes) }}>
+        <i class="nav-icon {{ item.extra('icon') }}"></i>
+        <p>{{ block('label') }}</p>
+    </a>
+{% endblock %}
