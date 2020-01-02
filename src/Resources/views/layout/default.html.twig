@@ -1,5 +1,17 @@
 {% extends '@Rhapsody/layout/default.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/rhapsodyadminlte/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/rhapsodyadminlte/css/adminlte.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script defer src="{{ asset('bundles/rhapsodyadminlte/js/jquery.min.js') }}"></script>
+    <script defer src="{{ asset('bundles/rhapsodyadminlte/js/adminlte.min.js') }}"></script>
+{% endblock %}
+
+{% block body_attribute_class %}hold-transition{% endblock %}
+
 {% block body %}
     <div class="wrapper">
         {% block navbar %}
@@ -14,7 +26,7 @@
 
         {% block sidebar %}
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="/" class="brand-link">
+            <a href="{{ rhapsody_path('dashboard') }}" class="brand-link">
                 <span class="brand-text font-weight-light">{{ project.name }}</span>
             </a>
             <div class="sidebar">
@@ -42,7 +54,7 @@
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
                                         {% block breadcrumb %}
-                                            <li class="breadcrumb-item"><a href="#">{{ 'ui.dashboard'|trans }}</a></li>
+                                            <li class="breadcrumb-item"><a href="#">{{ 'rhapsody.ui.dashboard'|trans }}</a></li>
                                         {% endblock %}
                                     </ol>
                                 </div>
@@ -58,19 +70,9 @@
 
         {% block footer %}
             <footer class="main-footer">
-                <div class="float-right d-none d-sm-block"><b>Version</b> {{ project.version }}</div>
-                <strong>Copyright &copy; {{ 'now'|date('Y') }} {{ project.name }}.</strong>
+                <div class="float-right d-none d-sm-block"><b>{{ 'rhapsody.ui.version'|trans }}</b> {{ project.version }}</div>
+                <strong>{{ project.name }}.</strong>
             </footer>
         {% endblock %}
     </div>
-{% endblock %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('bundles/rhapsodyadminlte/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('bundles/rhapsodyadminlte/css/adminlte.min.css') }}">
-{% endblock %}
-
-{% block javascripts %}
-    <script defer src="{{ asset('bundles/rhapsodyadminlte/js/jquery.min.js') }}"></script>
-    <script defer src="{{ asset('bundles/rhapsodyadminlte/js/adminlte.min.js') }}"></script>
 {% endblock %}

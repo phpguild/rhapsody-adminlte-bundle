@@ -1,0 +1,50 @@
+{% extends '@RhapsodyAdminLte/layout/default.html.twig' %}
+
+{% block body_attribute_class %}{{ parent() }} login-page{% endblock %}
+
+{% block body %}
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{{ rhapsody_path('auth_login') }}">{% block logo_login %}{% endblock %}</a>
+        </div>
+        <div class="card">
+            <div class="card-body login-card-body">
+                {% if 'rhapsody.ui.login_message'|trans %}
+                    <p class="login-box-msg">{{ 'rhapsody.ui.login_message'|trans }}</p>
+                {% endif %}
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <form action="{{ rhapsody_path('auth_login_check') }}" method="post">
+                    <div class="input-group mb-3">
+                        <input type="email" name="_username" class="form-control" placeholder="{{ 'rhapsody.ui.email'|trans }}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="_password" class="form-control" placeholder="{{ 'rhapsody.ui.password'|trans }}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">{{ 'rhapsody.ui.remember_me'|trans }}</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">{{ 'rhapsody.ui.signin'|trans }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

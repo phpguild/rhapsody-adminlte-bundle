@@ -1,0 +1,8 @@
+{% extends '@RhapsodyAdminLte/layout/default.html.twig' %}
+
+{% block title %}{{ 'rhapsody.ui.dashboard'|trans }} | {{ parent() }}{% endblock %}
+{% block content_title %}{{ 'rhapsody.ui.dashboard'|trans }}{% endblock %}
+{% block breadcrumb %}
+    {{ parent() }}
+    <li class="breadcrumb-item active">{{ 'rhapsody.ui.dashboard'|trans }}</li>
+{% endblock %}
