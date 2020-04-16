@@ -2,7 +2,7 @@
   "name": "phpguild/rhapsody-adminlte-bundle",
   "description": "AdminLTE 3 template for Symfony 4 and 5.",
   "type": "bundle",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "authors": [
     {
       "name": "Johnstyle",
