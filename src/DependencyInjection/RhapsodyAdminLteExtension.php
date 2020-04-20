@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PhpGuild\RhapsodyAdminLteBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader;

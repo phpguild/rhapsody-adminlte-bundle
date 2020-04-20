@@ -1,7 +1,7 @@
 {
   "name": "phpguild/rhapsody-adminlte-bundle",
   "description": "AdminLTE 3 template for Symfony 4 and 5.",
-  "type": "bundle",
+  "type": "symfony-bundle",
   "license": "GPL-3.0",
   "authors": [
     {
@@ -11,7 +11,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "phpguild/rhapsody-bundle": "dev-develop"
+    "phpguild/rhapsody-bundle": "dev-master"
   },
   "autoload": {
     "psr-4": {
