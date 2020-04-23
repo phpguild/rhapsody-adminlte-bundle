@@ -5,4 +5,4 @@ services:
 
   PhpGuild\RhapsodyAdminLteBundle\:
     resource: '../../*'
-    exclude: '../../{DependencyInjection,RhapsodyAdminLteBundle.php}'
+    exclude: '../../{DependencyInjection,Resources,RhapsodyAdminLteBundle.php}'
