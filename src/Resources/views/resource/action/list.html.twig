@@ -1,0 +1,8 @@
+{% extends '@RhapsodyAdminLte/layout/default.html.twig' %}
+
+{% block content %}
+    {% include '@RhapsodyAdminLte/component/table.html.twig' with {
+        resourceCollection: resourceCollection,
+        resourceParameters: resourceParameters
+    } only %}
+{% endblock %}
