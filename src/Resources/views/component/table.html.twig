@@ -12,7 +12,7 @@
         {% for field in resourceParameters.fields %}
             <td>
                 {% include [
-                    '@Rhapsody/resource/field/'~field.type~'.html.twig',
+                    '@Rhapsody/resource/field/'~field.type.name~'.html.twig',
                     '@Rhapsody/resource/field/_default.html.twig'
                 ] with { field: field, resource: resource } only %}
             </td>
